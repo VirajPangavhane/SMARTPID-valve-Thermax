@@ -1,0 +1,34 @@
+# Visual Studio files
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+bin/
+obj/
+*.exe
+*.dll
+*.pdb
+
+# Visual Studio 2015+ cache/options
+*.csproj.vspscc
+*.vcxproj.filters
+
+# ReSharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# Temp files
+*.tmp
+*.temp
+
+# System files
+.DS_Store
+Thumbs.db
+
+# User-specific files
+*.csproj.user
+*.vcxproj.user
