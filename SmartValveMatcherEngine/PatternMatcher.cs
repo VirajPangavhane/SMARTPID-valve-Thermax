@@ -150,16 +150,22 @@ public static class PatternMatcher
                                               (patternEntity.EndAngle - patternEntity.StartAngle));
                     score += (radiusDiff / 10.0) + (angleDiff / 10.0);
                 }
-                
-                if (targetEntity.Type == "Line" && targetEntity.Length > 0)
+
+                if (targetEntity.Type == "Line" && patternEntity.Length > 0)
                 {
-                    // For lines, we don't have pattern lengths, so we don't score them
+                    double lengthDiff = Math.Abs(targetEntity.Length - patternEntity.Length);
+                    score += lengthDiff / 10.0;
                 }
-                
+
                 if (targetEntity.Type == "Polyline")
                 {
                     int vertexDiff = Math.Abs(targetEntity.VertexCount - patternEntity.VertexCount);
                     score += vertexDiff * 2; // Weight vertex count differences
+                }
+
+                if (targetEntity.Type == "Leader")
+                {
+                    score += 1; // small penalty or weighted difference
                 }
             }
         }
